@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     semi: 'off',
     'no-console': 'off',
+    'import/first': 'off',
     'class-methods-use-this': 'off',
   },
 };
