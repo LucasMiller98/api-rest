@@ -12,3 +12,8 @@
 * delete -> apaga um usuário -> DELETE;
 * show -> mostra um usuário -> GET;
 * update -> atualiza um usuário -> PATCH ou PUT;
+
+## Qual a diferença entre PATCH e PUT?
+
+* PATCH -> ALTERA apenas um valor;
+* PUT -> Pega um objeto intero e substitui por outro objeto inteiro.
