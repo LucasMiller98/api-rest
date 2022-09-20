@@ -3,7 +3,7 @@ import User from '../models/User'
 class UserController {
   async store(req, res) {
     try {
-      const newUser = await User.create(req.body)
+      const newUser = await User.create(req.body) // recebe os dados da requisição.
       res.json(newUser)
     } catch (e) {
       res.status(400).json({
