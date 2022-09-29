@@ -4,6 +4,9 @@
 * Model faz referência a tabela;
 * Model referente a 1 dado;
 * Migrations -> alterações na base de dados;
+* multer -> upload de arquivos;
+* Date.now() -> milissegundos de 1970 até a data atual;
+* extname(file.originalname) -> pega a extensão do arquivo original
 
 ## Metodos
 
