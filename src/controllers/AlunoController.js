@@ -1,8 +1,16 @@
 import Aluno from '../models/Aluno'
+import Foto from '../models/Foto'
 
 class AlunoController {
   async index(req, res) {
-    const student = await Aluno.findAll() // lista os alunos
+    const student = await Aluno.findAll({
+      attributes: ['id', 'sobrenome', 'email', 'idade', 'peso', 'altura'],
+      order: [['id', 'DESC'], [Foto, 'id', 'DESC']],
+      include: {
+        model: Foto,
+        attributes: ['url', 'filename'],
+      },
+    }) // lista os alunos
     res.json(student)
   }
 
@@ -28,7 +36,14 @@ class AlunoController {
         })
       }
 
-      const student = await Aluno.findByPk(id)
+      const student = await Aluno.findByPk(id, {
+        attributes: ['id', 'sobrenome', 'email', 'idade', 'peso', 'altura'],
+        order: [['id', 'DESC'], [Foto, 'id', 'DESC']],
+        include: {
+          model: Foto,
+          attributes: ['url', 'filename'],
+        },
+      })
 
       if (!student) {
         return res.status(400).json({

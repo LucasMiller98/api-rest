@@ -13,7 +13,7 @@ export default {
   },
   storage: multer.diskStorage({ // salva no disco do server(PC)
     destination: (req, file, callback) => {
-      callback(null, resolve(__dirname, '..', '..', 'uploads'))
+      callback(null, resolve(__dirname, '..', '..', 'uploads', 'images'))
     },
     filename: (req, file, callback) => {
       callback(null, `${Date.now()}_${randomValues()}${extname(file.originalname)}`)
